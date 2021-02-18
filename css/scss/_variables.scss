@@ -1,0 +1,17 @@
+$font: 'Poppins', Arial, Helvetica, sans-serif;
+
+$white: #FFF;
+$black: #383838;
+$light-gray: #F4F4F4;
+$blue: #0088ED;
+$dark-blue: #005499;
+
+@function em($pixel, $context: 16) {
+  @return $pixel / $context + em;
+}
+
+@mixin type($size, $weight: 400) {
+  font-family: $font;
+  font-size: em($size);
+  font-weight: $weight;
+}
