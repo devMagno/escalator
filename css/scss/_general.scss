@@ -30,11 +30,9 @@
   }
 }
 
-.main {
+.section {
   max-width: 1200px;
   margin: 0 auto;
-}
-.section {
   &__header {
     margin-top: 40px; 
     margin-bottom: 20px;
@@ -99,4 +97,49 @@
   &__subheading {
     @include type(20, 600);
   }
+
+  &--plans {
+    background-color: $light-gray;
+    padding: 20px calc((100% - 1200px) / 2) 100px;
+  }
+  &__plans {
+    display: flex;
+    padding: 0 15px;
+    align-items: flex-end;
+  }
+  $margin-top: 0;
+  @for $i from 1 through 6 {
+    $margin-top: $margin-top + 40px;
+    .plan:nth-child(#{$i}) {
+      .plan__text {
+        margin-top: $margin-top;
+      }
+    }
+  }
+  .plan {
+    color: $white;
+    margin: 15px;
+    &__header {
+      background-color:$dark-blue;
+      padding: 15px 20px;
+    }
+    &__heading {
+      @include type(34, 600);
+      line-height: 40.8px;
+    }
+    &__subheading {
+      @include type(20, 600);
+      line-height: 24px;
+    }
+    &__bottom {
+      background-color: $blue;
+      padding: 15px 20px;
+    }
+    &__text {
+      @include type(12, 400);
+      line-height: 14.4px;
+    }
+  }
+
+
 }
