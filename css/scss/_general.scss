@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,11 +79,13 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-position: center center;
     }
     &--analysis {
       background-image: url('../../img/analysis.png');
       text-align: right;
       flex-grow: 2;
+      background-position: center center;
     }
     &--pictures {
       background-image: url('../../img/pictures.png');
