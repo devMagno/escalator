@@ -9,12 +9,18 @@
   align-items: center;
   padding: 70px 20px;
   text-align: center;
+  @include device(small) {
+    background-attachment: unset;
+  }
   &__title {
     @include type(62, 600);
     color: $white;
     line-height: 74.4px;
     max-width: 620px;
     margin: 70px 0 55px 0;
+    @include device(small) {
+      font-size: em(45);
+    }
   }
   &__button {
     @include type(18, 600);
@@ -22,6 +28,7 @@
     text-transform: uppercase;
     background: $white;
     padding: 13px 82px;
+    margin-bottom: 20px;
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
     transition: .3s background, .3s color;
     &:hover {
@@ -43,9 +50,17 @@
   }
   &__title {
     @include type(52, 600);
+    line-height: 1;
+    margin-bottom: 5px;
+    @include device(small) {
+      font-size: em(40)
+    }
   }
   &__subtitle {
-    @include type(18, 600)
+    @include type(18, 600);
+    @include device(small) {
+      font-size: em(16);
+    }
   }
 
   &__articles {
@@ -66,6 +81,9 @@
     color: $white;
     flex-shrink: 1;
     flex-grow: 1;
+    @include device(medium) {
+      height: 300px;
+    }
     &--nature {
       background-image: url('../../img/nature.png');
       flex-basis: 370px;
@@ -80,12 +98,18 @@
       flex-direction: column;
       justify-content: center;
       background-position: center center;
+      @include device(medium) {
+        display: block;
+      }
     }
     &--analysis {
       background-image: url('../../img/analysis.png');
       text-align: right;
       flex-grow: 2;
       background-position: center center;
+      @include device(medium) {
+        text-align: left;
+      }
     }
     &--pictures {
       background-image: url('../../img/pictures.png');
@@ -95,10 +119,16 @@
   &__heading {
     text-transform: lowercase;
     @include type(52, 600);
-    margin-bottom: 8px
+    margin-bottom: 8px;
+    @include device(small) {
+      font-size: em(40);
+    }
   }
   &__subheading {
     @include type(20, 600);
+    @include device(small) {
+      font-size: em(16);
+    }
   }
 
   &--plans {
@@ -109,6 +139,10 @@
     display: flex;
     padding: 0 15px;
     align-items: flex-end;
+    @include device(1000px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   $margin-top: 0;
   @for $i from 1 through 6 {
@@ -116,12 +150,21 @@
     .plan:nth-child(#{$i}) {
       .plan__text {
         margin-top: $margin-top;
+        @include device(1000px) {
+          margin-top: 0;
+        }
+      }
+      @include device(530px) {
+        order: -$i;
       }
     }
   }
   .plan {
     color: $white;
     margin: 15px;
+    @include device(1000px) {
+      flex: 1 1 220px;
+    }
     &__header {
       background-color:$dark-blue;
       padding: 15px 20px;
