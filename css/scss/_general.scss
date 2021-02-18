@@ -29,3 +29,74 @@
     }
   }
 }
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section {
+  &__header {
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    color: $black;
+    text-transform: lowercase;
+    padding: 0 30px
+  }
+  &__title {
+    @include type(52, 600);
+  }
+  &__subtitle {
+    @include type(18, 600)
+  }
+
+  &__articles {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    margin-bottom: 100px;
+    justify-content: center;
+  }
+
+  &__article {
+    box-sizing: border-box;
+    display: block;
+    height: 370px;
+    padding: 20px 30px;
+    margin: 15px;
+    background-size: cover;
+    color: $white;
+    flex-shrink: 1;
+    flex-grow: 1;
+    &--nature {
+      background-image: url('../../img/nature.png');
+      flex-basis: 370px;
+    }
+    &--daily {
+      background-image: url('../../img/daily.png');
+      flex-grow: 2;
+    }
+    &--together {
+      background-image: url('../../img/together.png');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &--analysis {
+      background-image: url('../../img/analysis.png');
+      text-align: right;
+      flex-grow: 2;
+    }
+    &--pictures {
+      background-image: url('../../img/pictures.png');
+      flex-basis: 370px;
+    }
+  }
+  &__heading {
+    text-transform: lowercase;
+    @include type(52, 600);
+    margin-bottom: 8px
+  }
+  &__subheading {
+    @include type(20, 600);
+  }
+}
