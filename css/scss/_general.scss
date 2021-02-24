@@ -85,15 +85,15 @@
       height: 300px;
     }
     &--nature {
-      background-image: url('../../img/nature.png');
+      background-image: url('../img/nature.png');
       flex-basis: 370px;
     }
     &--daily {
-      background-image: url('../../img/daily.png');
+      background-image: url('../img/daily.png');
       flex-grow: 2;
     }
     &--together {
-      background-image: url('../../img/together.png');
+      background-image: url('../img/together.png');
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -103,7 +103,7 @@
       }
     }
     &--analysis {
-      background-image: url('../../img/analysis.png');
+      background-image: url('../img/analysis.png');
       text-align: right;
       flex-grow: 2;
       background-position: center center;
@@ -154,7 +154,7 @@
           margin-top: 0;
         }
       }
-      @include device(530px) {
+      @include device(small) {
         order: -$i;
       }
     }
